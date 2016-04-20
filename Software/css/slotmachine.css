@@ -1,0 +1,72 @@
+#slotmachine {
+  width: 100px;
+  height: 100px;
+  padding: 0px 0px 0px;
+  margin: 0 auto;
+  border: px solid rgba(0, 13, 29, 0.9);
+  border-radius: 10px;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+  transition: all ease 1s;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+span {
+  position: absolute;
+  top: -200px;
+  left: -393px;
+  height: 500px;
+  width: 500px;
+  background: url('../img/powerups.png') no-repeat;
+}
+
+#slotmachine-container {
+  position: absolute;
+  display: none;
+  width: 200px;
+  top: 100px;
+  left: 42%;
+  margin: auto;
+}
+
+.boost {
+  -webkit-transform:rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+
+}
+.rapidfire {
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  transform:rotate(90deg);
+}
+
+.shield {
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+
+.health {
+  -webkit-transform:rotate(270deg);
+  -moz-transform:rotate(270deg);
+  transform:rotate(270deg);
+}
+
+.spin_forward {
+  -webkit-animation: rotate 1s infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation: rotate 1s infinite linear;
+}
+
+@-webkit-keyframes rotate {
+  from { -webkit-transform:rotate(0deg) }
+  to { -webkit-transform:rotate(360deg) }
+}
+
+@-moz-keyframes rotate {
+  from { -moz-transform:rotate(0deg) }
+  to { -moz-transform:rotate(360deg) }
+}

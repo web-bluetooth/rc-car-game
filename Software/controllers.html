@@ -1,0 +1,105 @@
+
+    <!-- Controllers: joystick and button -->
+    <div id="control-container">
+        <div id="cool-down-bar-container" class="wait-till-game">
+            <div id="cool-down-bar">
+            </div>
+        </div>
+
+        <div id="joystick-container" class="wait-till-game">
+        </div>
+
+        <div id="points" class="wait-till-game">
+        </div>
+        <div id="slotmachine-container">
+            <div id="slotmachine">
+                <span></span>
+            </div>
+        </div>
+        <div id="game-message">
+        </div>
+        <div id="message-container">
+            <div id="message">
+            </div>
+            <div id="game-info">
+            </div>
+        </div>
+        <div id="btn-gamemenu-container">
+            <div id="btn-singleplayer" class="button-main-menu">
+                <img src="img/singleplayer.png">
+                Singleplayer
+            </div>
+            <div id="btn-create-game" class="button-main-menu">
+                <img src="img/multiplayer.png">
+                Create Game
+            </div>
+            <div id="btn-join-game" class="button-main-menu">
+                <img src="img/joingame.png">
+                Join Game
+            </div>
+            <div id="btn-settings" class="button-main-menu">
+                <img src="img/settings.png">
+                Settings
+            </div>
+            <div id="btn-reconnect" class="button-main-menu">
+                <img src="img/bluetoothlogo.png">
+                Reconnect
+            </div>
+            <div id="btn-home" class="button-main-menu">
+                <img src="img/home.png">
+                Home
+            </div>
+        </div>
+        <div id="btn-join-container">
+            <div id='btn-join-popup' class='button'>
+                Join
+            </div>
+            <div id="btn-return" class="button">
+                Return
+            </div>
+        </div>
+        <div id="count-down">
+        </div>
+        <div id="static" class ="wait-till-game">
+        </div>
+
+        <div id="fire-button-container" >
+            <div id="control-button" class="wait-till-game">
+            </div>
+        </div>
+        <div id="btn-menu" class="wait-till-game">
+            <img src="img/menu.png">
+        </div>
+        <div id="slide-menu">
+            <div id="slide-menu-btn-container">
+                <div id="btn-exit" class="button btn-slide-menu">
+                    Exit Game
+                </div>
+                <div id="btn-slotmachine" class="button btn-slide-menu">
+                    Get Powerup
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="status-create-game">
+    </div>
+    <script src="js/nipplejs.min.js"></script>
+
+    <script>
+        $('#btn-settings').on('click', function() {
+            $('#btn-gamemenu-container').fadeOut("slow");
+            $('#main').fadeOut(200).promise().done(function() {
+
+                var time = new Date();
+                var e = time.getTime();
+                $('#main').load('settings.html?' + e).promise().done( function() { $(this).fadeIn(200)});
+            });
+        });
+    </script>
+
+    <!--  Include demo version of the car controllers -->
+    <script>
+        var time = new Date();
+        var e = time.getTime();
+        $.getScript( "js/game.js?t=" + e);
+    </script>

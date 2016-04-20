@@ -1,0 +1,290 @@
+/***  Stylesheet for game controllers  ***/
+
+#control-container {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+}
+
+#joystick-container, #fire-button-container {
+    display: inline-block;
+}
+
+#joystick-container {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.front {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0 , 0, 0.4);
+}
+
+#fire-button-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 20px;
+    padding-top: 90px;
+    height: 100%;
+    width: 150px;
+}
+
+#control-button {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0, 0.2);
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+
+
+#points {
+    display: none;
+    font-size:40px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    position: fixed;
+    top: 35px;
+    width: 100%;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+#cool-down-bar-container {
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    left: 50%;
+    top: 10px;
+    margin-left: -100px;
+    border-radius: 5px;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+#cool-down-bar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #367d59;
+}
+
+#message-container, #game-message {
+    position: relative;
+    display: none;
+    max-width: 320px;
+    top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    font-size: 35px;
+    font-weight: 700;
+    box-shadow: 0px 0px 60px 0px rgba(0,0,0, 0.4);
+}
+
+#game-message {
+    width:200px;
+    top: 100px;
+}
+
+#game-info {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+#btn-gamemenu-container {
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    width: 420px;
+    margin-left: -200px;
+    margin-top: 25px;
+}
+
+#btn-join-container {
+    display: none;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+}
+
+#btn-return {
+
+}
+
+.wait-till-game {
+    visibility: hidden;
+}
+
+#static {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 10px;
+    top: 30px;
+}
+.button, .msg-button {
+    position: relative;
+    width: 300px;
+    height: 26px;
+    padding: 5px;
+    margin: 30px auto;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+    background-color: rgba(8, 62, 96, 0);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 20px 0px rgba(0,0,0, 0.4);
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.msg-button {
+    margin: 10px auto;
+}
+
+.button-main-menu {
+    display: inline-block;
+    width: 150px;
+    height: 65px;
+    padding: 4px;
+    margin: 13px 20px;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+    background-color: rgba(8, 62, 96, 0);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 30px 0px rgba(0,0,0, 0.5);
+    color: #DDD;
+    font-size: 18px;
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.button-main-menu img {
+    margin: 8px auto 8px auto;
+    display: block;
+    clear: both;
+    height: 25px;
+    opacity: 1;
+}
+.button:last-child, .msg-button:last-child {
+    margin-bottom: 5px;
+}
+.msg-button {
+    width: 200px;
+}
+
+#btn-menu {
+    display: none;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -20px;
+    color: white;
+    font-size: 25px;
+    padding-top: px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 100%;
+    text-align: center;
+    z-index: 100;
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+#btn-menu img {
+    width: 40px;
+    margin-top: 6px;
+}
+
+#slide-menu {
+    height: 0px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    bottom: 0;
+    margin: 0;
+    clear: both;
+    vertical-align: middle;
+    z-index: 10;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+}
+
+#slide-menu-btn-container {
+    max-width: 600px;
+    margin: 13px auto;
+    text-align: center;
+}
+.btn-slide-menu {
+    display: inline-block;
+    width: 150px;
+    margin: 0 15px;
+    font-size: 18px;
+    height: 20px;
+    padding: 6px 0;
+}
+
+#message input[type=text] {
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2px 8px;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    width: 120px;
+    text-transform:uppercase;
+    margin: 0;
+    color: white;
+
+}
+ ::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0, 0.3);
+}
+
+.msg {
+    font-size: 20px;
+    margin: 0px 10px 20px 10px;
+    text-align: left;
+    line-height: 130%;
+    color: white;
+
+}
+
+#join-fail {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+
+.success-glow {
+    box-shadow: 0px 0px 20px 0px rgba(33,219,70, 0.8);
+}
+
+.alert-glow {
+    box-shadow: 0px 0px 20px 0px rgba(204,41,0, 0.8);
+}

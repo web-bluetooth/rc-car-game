@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="js/ble.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/slotmachine.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css?"></link>
+    <link rel="stylesheet" type="text/css" href="css/controllers.css"></link>
+
+    <title>Physical Web Car</title>
+
+  </head>
+
+    <body>
+        <div id="orientation-message">
+            <div>Please rotate the device 90&#176;
+                <div id="rotate-img">
+                    <img src="img/rotate.png">
+               </div>
+            </div>
+        </div>
+        <div id="connectionStatus">Connection status</div>
+
+        <div id="fullscreen" onclick="">Click for fullscreen</div>
+
+        <div id="main">
+
+            <h1 id="welcome">Physical Web Car</h1>
+            <div id="main-message">
+    			<div onclick="game_init();" id='connect' class="button-main-menu">
+                    <img src="img/play.png">
+                    Start
+                </div>
+            </div>
+
+
+        </div>
+		<div id="footer">
+		    <img src="img/physicalweb.png" class="footer-logo"></img>
+			<img src="img/nordic.png" id="nordiclogo" class="footer-logo"></img>
+            <img src="img/ntnu.png" id="ntnu" class="footer-logo"></img>
+		</div>
+
+		<script>
+
+        //*** Initialize game **/
+
+        function game_init() {
+            toggleFullscreen();
+            ble.connect();
+            $('#fullscreen').show();
+			$('#footer').hide();
+            $('#connectionStatus').fadeIn();
+            var time = new Date();
+            var e = time.getTime();
+            setTimeout(function() {
+                $('#main').load('controllers.html?t=' + e);
+            }, 1000);
+        }
+
+
+		</script>
+
+
+
+        <script>
+            // Enable fullscreen
+            function toggleFullscreen(elem) {
+              elem = elem || document.documentElement;
+              if (!document.fullscreenElement && !document.mozFullScreenElement &&
+                !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                if (elem.requestFullscreen) {
+                  elem.requestFullscreen();
+                } else if (elem.msRequestFullscreen) {
+                  elem.msRequestFullscreen();
+                } else if (elem.mozRequestFullScreen) {
+                  elem.mozRequestFullScreen();
+                } else if (elem.webkitRequestFullscreen) {
+                  elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                }
+				$('#fullscreen').show();
+                $('#fullscreen').html("Exit fullscreen");
+              } else {
+                if (document.exitFullscreen) {
+                  document.exitFullscreen();
+                } else if (document.msExitFullscreen) {
+                  document.msExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                  document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                  document.webkitExitFullscreen();
+                }
+                $('#fullscreen').html("Fullscreen");
+              }
+            }
+
+            document.getElementById('fullscreen').addEventListener('click', function() {
+                toggleFullscreen();
+            });
+
+            (function() {
+                var time = new Date();
+                var e = time.getTime();
+                $('head').append('<link rel="stylesheet" href="css/settings.css?' + e + '" type="text/css" />');
+            })();
+
+
+        </script>
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,166 @@
+/* Link til fargekoder i hex: http://www.w3schools.com/colors/colors_picker.asp */
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700|Alegreya+Sans);
+
+html {
+	margin: 0;
+	padding: 0;
+
+}
+body {
+	position: absolute;
+	margin: 0;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	background: #0b4260;
+    font-family: "PT Sans";
+	text-align: center;
+	min-height: 420px;
+	overflow: hidden;
+	background-image: url('../img/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#footer {
+	height: 40px;
+	width: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+	position: fixed;
+	bottom: 0;
+	margin: 0;
+	clear: both;
+	vertical-align: middle;
+	z-index: 10;
+	box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.4);
+}
+
+.footer-logo {
+	height: 18px;
+	margin: 12px 30px 0 30px;
+}
+
+#main {
+	width: 100%;
+	height: 100%;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main-message {
+
+}
+
+h1 {
+	color: #FFF;
+	font-size: 50px;
+	text-align: center;
+	margin: -5px auto 30px auto;
+	text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.6);
+    font-family: "Alegreya Sans";
+	width: 100%;;
+	border-radius: 3px;
+	padding: 30px 0 0px 0;
+    /*background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+    background-color: rgba(214, 10, 10, 0);
+	box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.0);*/
+	box-sizing: border-box;
+}
+
+h2 {
+	color: #FFF;
+	font-size: 35px;
+	text-align: center;
+	margin: 0 auto;
+	text-shadow: 0px 0px 13px rgba(0, 0, 0, 0.3);
+    font-family: "Alegreya Sans";
+	width: 100%;;
+	border-radius: 3px;
+	padding: 5px 0 5px 0;
+    /*background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+    background-color: rgba(214, 10, 10, 0);
+	box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.0);*/
+	box-sizing: border-box;
+}
+
+h3 {
+	color: white;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+input[type=range] {
+	display: inline-block;
+	width: 50px;
+	height: 100px;
+	writing-mode: bt-lr; /* IE */
+	-webkit-appearance: slider-vertical; /* WebKit */
+}
+
+#connectionStatus {
+	display: none;
+	padding: 2px 5px;
+	background-color: rgb(195, 7, 12);
+	color: white;
+	visibility: ;
+	text-align: center;
+	border: 1px solid #CCC;
+	border-radius: 2px;
+	position: fixed;
+	margin-left: auto;
+	margin-right: auto;
+	top: 10px;
+	right: 10px;
+	font-size: 12px;
+}
+
+/* Button to activate fullscreen */
+
+#fullscreen {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 4px;
+    background-color: #222;
+    color: white;
+    z-index: 10;
+}
+
+/****  Message if portrait orientation  *****/
+
+#orientation-message {
+	display: none;
+}
+
+@media screen and (orientation:portrait)
+{
+   	#orientation-message {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+		font-size: 25px;
+		background-image: url('../img/bg.jpg');
+        color: white;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+        text-align: center;
+        font-weight: 700;
+        padding-top: 200px;
+        z-index: 1000;
+    }
+    #rotate-img img{
+    	width: 100px;
+    	margin-top: 100px;
+    }
+}

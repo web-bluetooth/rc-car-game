@@ -1,0 +1,135 @@
+#settings-container {
+    width: 100%;
+    margin-top: 40px;
+}
+
+#settings-inner-container {
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid white;
+    padding: 0 10px 10px 10px;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 1px;
+    text-align: center;
+    color: white;
+    padding: 15px;
+    font-size: 35px;
+    font-weight: 700;
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0, 0.4);
+}
+
+#settings-title {
+    width:100%;
+    text-align: center;
+    margin: 0 0 8px 0;
+    font-size: 25px;
+    color: white;
+    font-family: "PT Sans";
+}
+
+#settings-content {
+    color: white;
+}
+
+.settings-row {
+    padding: 4px 10px;
+    min-height: 30px;
+    width: 400px;
+    z-index: 10;
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.settings-row:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.17));
+}
+
+.settings-row-label {
+    display: inline-block;
+    float: left;
+    color: white;
+}
+
+.settings-row-setting {
+    float: right;
+    font-weight: normal;
+}
+
+input[type=number].settings-contenteditable {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 60px 0px rgba(0,0,0, 0.4) inset;
+    width: 34px;
+    height: 100%;
+    box-sizing: border-box;
+    margin-top: 0;
+    vertical-align: top;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    outline: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.settings-setter {
+    display: inline-block;
+    height: 22px;
+}
+
+.settings-setter-up,
+.settings-setter-down {
+    display: inline-block;
+    vertical-align: top;
+    width: 22px;
+    height: 100%;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.settings-setter-down {
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+}
+
+.settings-setter-up {
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+}
+
+.btn-debug{
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    padding: 3px;
+    margin: -5px 10px 5px 0;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+    background-color: rgba(8, 62, 96, 1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 20px 0px rgba(0,0,0, 0.4);
+    color: #FFF;
+    font-size: 14px;
+}

@@ -1,0 +1,153 @@
+<div id="settings-container">
+    <div id="settings-inner-container">
+        <div id="settings-title">
+            Settings
+        </div>
+        <div id="settings-content">
+            <div class="settings-row">
+                <div class="settings-row-label">
+                    Write value to RGB LED
+                </div>
+                <div class="settings-row-setting">
+                    <div id='btn-rgb-send' class="btn-debug">Send</div>
+                    <div class="settings-setter">
+                        <div class="settings-setter-down">
+                            -
+                        </div><input type="number" id="settings-rgbValue" class="settings-contenteditable" value="0" min="0" max="99"><div class="settings-setter-up">
+                            +
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-row">
+                <div class="settings-row-label">
+                    Time to join
+                </div>
+                <div class="settings-row-setting">
+                    <div class="settings-setter">
+                        <div class="settings-setter-down">
+                            -
+                        </div><input type="number" id="settings-timeToJoin" class="settings-contenteditable" maxlength="2"><div class="settings-setter-up">
+                            +
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-row">
+                <div class="settings-row-label">
+                    Number of lives
+                </div>
+                <div class="settings-row-setting">
+                    <div class="settings-setter">
+                        <div class="settings-setter-down">
+                            -
+                        </div><input type="number" id="settings-lives" class="settings-contenteditable" maxlength="2"><div class="settings-setter-up">
+                            +
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-row">
+                <div class="settings-row-label">
+                    Cooldown time before new shot
+                </div>
+                <div class="settings-row-setting">
+                    <div class="settings-setter">
+                        <div class="settings-setter-down">
+                            -
+                        </div><input type="number" id="settings-coolDownPeriod" class="settings-contenteditable" maxlength="2"><div class="settings-setter-up">
+                            +
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-row">
+                <div class="settings-row-label">
+                    Minimum time between hits
+                </div>
+                <div class="settings-row-setting">
+                    <div class="settings-setter">
+                        <div class="settings-setter-down">
+                            -
+                        </div><input type="number" id="settings-timeBetweenHits" class="settings-contenteditable" maxlength="2"><div class="settings-setter-up">
+                            +
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="settings-btn-return" class="button">
+            Save and return
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var setter = {
+        timeToJoin : function() {
+            game.timeToJoin = $(this).val().trim();
+        }
+    };
+
+    // Populate settings boxes
+    $('#settings-timeToJoin').val(game.timeToJoin);
+    $('#settings-lives').val(game.score);
+    $('#settings-coolDownPeriod').val(game.coolDownPeriod/1000);
+    $('#settings-timeBetweenHits').val(game.timeBetweenHits/1000);
+
+    // Save the new settings
+    $('#settings-timeToJoin').focusout( function() {
+        game.timeToJoin = $(this).val().trim();
+        console.log('Time to join: ' + game.timeToJoin);
+    });
+
+    $('#settings-lives').focusout( function() {
+        game.score = $(this).val().trim();
+        console.log('Number of lives: ' + game.score);
+    });
+
+    $('#settings-coolDownPeriod').focusout( function() {
+        game.coolDownPeriod = $(this).val().trim() * 1000;
+        console.log('Cooldown time: ' + game.coolDownPeriod);
+    });
+
+    $('#settings-timeBetweenHits').focusout( function() {
+        game.timeBetweenHits = $(this).val().trim() * 1000;
+        console.log('Time between hits: ' + game.timeBetweenHits);
+    });
+
+
+
+    $('.settings-setter-up').on('click', function() {
+        var input = $(this).parent().find('input');
+        var prev = parseInt(input.val());
+        var current = (prev + 1 > 99) ? 99 : prev + 1;
+        input.val(current);
+    });
+
+    $('.settings-setter-down').on('click', function() {
+        var input = $(this).parent().find('input');
+        var prev = parseInt(input.val());
+        var current = (prev - 1 < 0) ? 0 : prev - 1;
+        input.val(current);
+    });
+
+    // Return to game menu
+    $('#settings-btn-return').on('click', function() {
+        game.timeToJoin = $('#settings-timeToJoin').val().trim();
+        game.score = $('#settings-lives').val().trim();
+        game.coolDownPeriod = $('#settings-coolDownPeriod').val().trim() * 1000;
+        game.timeBetweenHits = $('#settings-timeBetweenHits').val().trim() * 1000;
+        $('#main').fadeOut(200).promise().done( function() { $(this).load('controllers.html').fadeIn(200) });
+    });
+
+    //** Debugging **//
+
+    $('#btn-rgb-send').on('touchstart mousedown', function(event) {
+        event.preventDefault;
+        ble.charVal[5] = $('#settings-rgbValue').val().trim();
+        console.log(ble.charVal);
+        ble.priorityWrite(ble.charVal);
+    });
+</script>
