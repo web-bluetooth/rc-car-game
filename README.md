@@ -6,7 +6,9 @@ The project utilizes the [nRF52 Development Kit](http://no.mouser.com/new/nordic
 
 The thesis itself is scheduled to be delivered May 25th 2016, so the publication of this project is a snapshot of the functionality to coincide with the release of [The Physical Web](https://google.github.io/physical-web/). Although the project is not fully completed, the main functonality is in place, and we are only missing simple lights and sound.
 
-[![Physical Web Car](http://i.imgur.com/bhzXKaB.png)](https://youtu.be/D7AY-5eFU-A "Physical Web Car")
+[![Physical Web Car](http://i.imgur.com/bhzXKaB.png)](https://youtu.be/CvxeobtZiWY "Physical Web Car")
+
+A working version of the game can be found and tested [here](https://jtguggedal.github.io)
 
 Our goal was to make several Bluetooth Smart controlled cars that can play a game of laser tag against each other as well as receive random power ups by driving over RFID tags.
 
